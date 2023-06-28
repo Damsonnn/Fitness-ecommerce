@@ -1,7 +1,13 @@
 package com.damcio.shop.model;
 
 import jakarta.persistence.*;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 public class Brand {
     @Id
@@ -17,56 +23,4 @@ public class Brand {
     private String name;
     private String website;
     private String address;
-
-    public Brand() {
-    }
-
-    public Brand(Integer id, String name, String website, String address) {
-        this.id = id;
-        this.name = name;
-        this.website = website;
-        this.address = address;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Brand{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", website='" + website + '\'' +
-                ", address='" + address + '\'' +
-                '}';
-    }
 }
