@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/categories")
+@RequestMapping("/api/customers")
 public class CustomerController {
 
     @Autowired
@@ -19,7 +19,7 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
         Customer savedCustomer = customerService.createCustomer(customer);
-        return new ResponseEntity<>(savedCustomer, HttpStatus.OK);
+        return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
     }
 
     @GetMapping("{id}")

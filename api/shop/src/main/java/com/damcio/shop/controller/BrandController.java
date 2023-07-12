@@ -19,7 +19,7 @@ public class BrandController {
     @PostMapping
     public ResponseEntity<Brand> createBrand(@RequestBody Brand brand){
         Brand savedBrand = brandService.createBrand(brand);
-        return new ResponseEntity<>(savedBrand, HttpStatus.OK);
+        return new ResponseEntity<>(savedBrand, HttpStatus.CREATED);
     }
 
     @GetMapping("{id}")
